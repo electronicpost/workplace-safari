@@ -15,8 +15,8 @@ URL_SUBMIT = 'https://wps-tvmaze.azurewebsites.net/api/submit'
 
 # ==============================================
 # SECTION A CODE
-
-
+name = 'mick'
+show_id = ''
 # ==============================================
 
 # SECTION B
@@ -33,7 +33,10 @@ URL_SUBMIT = 'https://wps-tvmaze.azurewebsites.net/api/submit'
 
 # ==============================================
 # SECTION B CODE
-
+def api_request(url, query_str):
+    response = requests.get(url, params=query_str)
+    print(response, query_str)
+    print(response.text)
 
 # ==============================================
 
@@ -61,6 +64,10 @@ URL_SUBMIT = 'https://wps-tvmaze.azurewebsites.net/api/submit'
 
 # ==============================================
 # SECTION C CODE
-
+query_string = {
+    "name": name,
+    "show_id": str(show_id)
+}
+api_request(URL_SUBMIT, query_string)
 
 # ==============================================
